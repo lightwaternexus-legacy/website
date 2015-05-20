@@ -1,13 +1,16 @@
 <?php
 $home_img = "/img/img" . rand(2, 4) . ".jpg";
-// TODO make home image pick between a random list of images.
+$masthead_brand = 'Hyden';
+$active = 'Home';
+$steam = 'Steam';
+$git = 'GitHub'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Home | Hyden</title>
+    <title>Home | Lightwater Nexus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php include ("lib.php");?>
     <style type="text/css">
@@ -159,12 +162,6 @@ $home_img = "/img/img" . rand(2, 4) . ".jpg";
         }
     </style>
 </head>
-<?php
-$masthead_brand = 'Hyden';
-$active = 'Home';
-$yt = 'Steam';
-$git = 'GitHub'; 
-?>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
@@ -178,7 +175,7 @@ $git = 'GitHub';
                             </li>
 
                             <li>
-                                <a href="#" onclick="alert('Maybe soon! ;)');"><p style="visibility: hidden"><?php echo($yt); ?></p></a>
+                                <a href="#" onclick="alert('Maybe soon! ;)');"><p style="visibility: hidden"><?php echo($steam); ?></p></a>
                             </li>
 
                             <li>
@@ -197,29 +194,31 @@ $git = 'GitHub';
         </div>
     </div>
     <script type="text/javascript">
+    
 	scheduleForFadeIn('#line1', '<h1 class="cover-heading">Hyden</h1>                     <p class="lead">This project is currently under development.</p>                     <p class="lead"><a class="btn btn-lg btn-success" href="#" onclick="alert(\'This section is coming soon.<strong> Thanks for your interest!</strong>\');">Be a Beta Tester</a></p>');
 	scheduleForFadeIn('#copyright', ' <p style="color: black">© <?php echo date("Y"); ?> LightWater Nexus and Justin O\'Boyle</p>');
 	autoFadeIn('#inner');
 	
 	var time = 50;
-	function scheduleForFadeIn(element, html){
-	setTimeout(function(){
-	$(element).hide();
-	$(element).html(html);
-	$(element).fadeIn();
-	}, time);
-		time = time + 50;
+	
+	function scheduleForFadeIn(element, html) {
+	    setTimeout(function() {
+	        $(element).hide();
+	        $(element).html(html);
+	        $(element).fadeIn();
+	    }, time);
+	    time = time + 50;
 	}
 	
-	function autoFadeIn(element){
-		var html = replaceAll('style="visibility: hidden"', '', $(element).html());
-		console.log(html);
-		scheduleForFadeIn(element, html);
+	function autoFadeIn(element) {
+	    var html = replaceAll('style="visibility: hidden"', '', $(element).html());
+	    console.log(html);
+	    scheduleForFadeIn(element, html);
 	}
 	
-function replaceAll(find, replace, str) {
-  return str.replace(new RegExp(find, 'g'), replace);
-}
+	function replaceAll(find, replace, str) {
+	    return str.replace(new RegExp(find, 'g'), replace);
+	}
 	
     </script>
 </body>
