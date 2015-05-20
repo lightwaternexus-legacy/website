@@ -1,3 +1,7 @@
+<?php
+$home_img = "/img/img" . rand(2, 4) . ".jpg";
+// TODO make home image pick between a random list of images.
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +31,7 @@
         html,
         body {
             
-            background: url(/img/img3.jpg) no-repeat center center fixed;
+            background: url(<?php echo($home_img); ?>) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
